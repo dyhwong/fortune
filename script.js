@@ -3,31 +3,11 @@ function app() {
 	class Fortune {
 		constructor(fortuneList) {
 			this.text = !fortuneList ? "No fortune" : fortuneList[~~(Math.random() * fortuneList.length)];
-			this.luckyNumbers = [];
-			this.drawLuckyNumbers();
-		}
-		drawLuckyNumbers() {
-			let maxDraws = 6,
-				draws = maxDraws,
-				maxNumber = 99,
-				numberPool = [];
-
-			// create number pool
-			while (maxNumber--) {
-				numberPool.unshift(maxNumber + 1);
-			}
-			// draw from pool, populate the lucky numbers
-			while (draws--) {
-				let drawn = ~~(Math.random() * numberPool.length);
-				this.luckyNumbers.push(numberPool[drawn]);
-				numberPool.splice(drawn,1);
-			}
 		}
 	}
 
 	var fcBtn = document.querySelector("button"),
 		fortuneText = document.querySelector(".fc-fortune-text"),
-		fortuneLuckyNumbers = document.querySelector(".fc-lucky-numbers span"),
 		fortuneList = [
 			"Did you know that fortune cookies aren’t even Chinese? They’re made by Americans, based on a Japanese recipe.",
 			"You have an ability to sense and know higher truth.",
@@ -55,7 +35,6 @@ function app() {
 		getFortune = function(){
 			fortune = new Fortune(fortuneList);
 			fortuneText.innerHTML = fortune.text;
-			fortuneLuckyNumbers.innerHTML = fortune.luckyNumbers.join(", ");
 		},
 		nextState = function(){
 			let elClass = this.classList,
