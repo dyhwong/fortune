@@ -28,27 +28,12 @@ function getFortune(fortunes) {
 }
 
 function app() {
-	var fcBtn = document.querySelector("button"),
-		fortuneText = document.querySelector(".fc-fortune-text"),
-
-		nextState = function(){
-			let elClass = this.classList,
-				spawned = "spawned",
-				opened = "opened";
-
-			// open cookie
-			if (elClass.contains(spawned)) {
-				elClass.remove(spawned);
-				elClass.add(opened);
-
-			// new cookie
-			} else {
-				elClass.remove(opened);
-				elClass.add(spawned);
-				fortuneText.innerHTML = getFortune(fortuneList);
-			}
-		};
-
+	const fcBtn = document.querySelector("button");
+	const fortuneText = document.querySelector(".fc-fortune-text");
 	fortuneText.innerHTML = getFortune(fortuneList);
-	fcBtn.addEventListener("click",nextState);
+
+  setTimeout(function() {
+    fcBtn.classList.remove("spawned");
+    fcBtn.classList.add("opened");
+  }, 500);
 }
