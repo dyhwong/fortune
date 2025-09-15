@@ -37,11 +37,3 @@ function app() {
     fcBtn.classList.add("opened");
   }, 500);
 }
-
-document.querySelectorAll(".left, .right").forEach(el => {
-  el.addEventListener("animationend", e => {
-    if (e.animationName === "breakLeft" || e.animationName === "breakRight") {
-      el.style.display = "none";
-    }
-  })
-})
