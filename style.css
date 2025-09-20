@@ -150,18 +150,23 @@ button {
 .opened {
 	width: 26em;
 	height: 6em;
+  animation: shake 0.4s ease-in-out 1;
 }
 .opened .left {
 	animation: breakLeft 0.7s ease-in forwards;
+  animation-delay: 0.4s;
 }
 .opened .right {
 	animation: breakRight 0.7s ease-in forwards;
+  animation-delay: 0.4s;
 }
 .opened .fc-crumbs {
 	animation: fallOut 0.7s ease-in forwards;
+  animation-delay: 0.4s;
 }
 .opened .fc-fortune {
 	animation: foldOut 0.7s ease-in forwards;
+  animation-delay: 0.4s;
 }
 
 /* Animations */
@@ -175,6 +180,13 @@ button {
 	to {
 		transform: scale(1);
 	}
+}
+@keyframes shake {
+  0%, 10%, 90%, 100% { transform: rotate(0deg) translateX(0); }
+  20% { transform: rotate(6deg) translateX(4px); }
+  40% { transform: rotate(-6deg) translateX(-4px); }
+  60% { transform: rotate(6deg) translateX(4px); }
+  80% { transform: rotate(-6deg) translateX(-4px); }
 }
 @keyframes breakLeft {
 	from {
