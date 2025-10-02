@@ -19,9 +19,6 @@ body, button {
 body {
 	background: #D00018;
 }
-button {
-	cursor: pointer;
-}
 #container {
   height: 17em;
 }
@@ -138,9 +135,6 @@ button {
 }
 .fc-fortune-text {
 	font-family: serif;
-}
-.fc-lucky-numbers {
-	font-family: sans-serif;
 }
 
 /* Animation States */
